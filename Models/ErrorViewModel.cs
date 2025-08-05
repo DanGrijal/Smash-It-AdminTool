@@ -1,4 +1,4 @@
-namespace MiProyecto.Models;
+namespace SGA_Smash.Models;
 
 public class ErrorViewModel
 {

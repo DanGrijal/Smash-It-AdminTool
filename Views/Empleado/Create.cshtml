@@ -1,0 +1,35 @@
+@model SGA_Smash.Models.Empleado
+@{
+    ViewData["Title"] = "Crear Empleado";
+}
+
+<div class="container-fluid">
+    <h3 class="mb-4">Nuevo Empleado</h3>
+    <form asp-action="Create">
+        <div class="mb-3">
+            <label asp-for="Nombre" class="form-label"></label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Puesto" class="form-label"></label>
+            <input asp-for="Puesto" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="SalarioBase" class="form-label"></label>
+            <input asp-for="SalarioBase" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="FechaIngreso" class="form-label"></label>
+            <input asp-for="FechaIngreso" class="form-control" type="date" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Estado" class="form-label"></label>
+            <select asp-for="Estado" class="form-select">
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

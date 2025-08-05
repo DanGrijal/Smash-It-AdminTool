@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using MiProyecto.Models;
+using SGA_Smash.Models;
 
-namespace MiProyecto.Controllers;
+namespace SGA_Smash.Controllers;
 
 public class HomeController : Controller
 {
@@ -14,9 +14,25 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
+{
+    ViewBag.EmpleadosPorRol = new Dictionary<string, int>
     {
-        return View();
-    }
+        { "Cocineros", 3 },
+        { "Meseros", 4 },
+        { "Cajeros", 2 },
+        { "Gerentes", 1 }
+    };
+
+    ViewBag.GastosMensuales = new Dictionary<string, decimal>
+    {
+        { "Enero", 120000 },
+        { "Febrero", 95000 },
+        { "Marzo", 110000 },
+        { "Abril", 130000 }
+    };
+
+    return View();
+}
 
     public IActionResult Privacy()
     {

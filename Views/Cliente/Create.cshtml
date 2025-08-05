@@ -1,0 +1,33 @@
+@model SGA_Smash.Models.Cliente
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card rounded-3">
+                <div class="card-body">
+                    <h4 class="card-title">Agregar Cliente</h4>
+                    <form asp-action="Create">
+                        <div class="mb-3">
+                            <label asp-for="Nombre" class="form-label">Nombre</label>
+                            <input asp-for="Nombre" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Correo" class="form-label">Correo</label>
+                            <input asp-for="Correo" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Telefono" class="form-label">Teléfono</label>
+                            <input asp-for="Telefono" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FechaRegistro" class="form-label">Fecha de Registro</label>
+                            <input asp-for="FechaRegistro" class="form-control" type="date" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
