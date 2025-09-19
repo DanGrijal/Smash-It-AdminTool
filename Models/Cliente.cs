@@ -1,10 +1,26 @@
-namespace SGA_Smash.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Cliente
+namespace SGA_Smash.Models
 {
-    public int Id { get; set; }
-    public string Nombre { get; set; }
-    public string Correo { get; set; }
-    public string Telefono { get; set; }
-    public DateTime FechaRegistro { get; set; }
+    [Table("Cliente")]
+    public class Cliente
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(100, ErrorMessage = "El nombre no puede exceder 100 caracteres")]
+        public string Nombre { get; set; }
+
+        [EmailAddress(ErrorMessage = "Formato de correo electrónico inválido")]
+        [StringLength(100, ErrorMessage = "El correo no puede exceder 100 caracteres")]
+        public string Correo { get; set; }
+
+        [StringLength(20, ErrorMessage = "El teléfono no puede exceder 20 caracteres")]
+        public string Telefono { get; set; }
+
+        public DateTime FechaRegistro { get; set; }
+    }
 }

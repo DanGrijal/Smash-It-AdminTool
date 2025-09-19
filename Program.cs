@@ -1,4 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using SGA_Smash.Data;
+using SGA_Smash.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Registra el contexto de base de datos en el contenedor de dependencias
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+//Referencias a repositorios
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
