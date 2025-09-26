@@ -11,11 +11,11 @@ CREATE TABLE Roles (
 -- Tabla Empleado
 CREATE TABLE Empleado (
     id INT PRIMARY KEY IDENTITY(1,1),
-    nombre VARCHAR(100) NOT NULL,
-    puesto VARCHAR(100),
-    salario_base DECIMAL(10, 2),
-    fecha_ingreso DATE,
-    estado VARCHAR(50)
+    Nombre VARCHAR(100) NOT NULL,
+    Puesto VARCHAR(100),
+    SalarioBase DECIMAL(10, 2),
+    FechaIngreso DATE,
+    Estado VARCHAR(50)
 );
 
 -- Tabla Vacacion
